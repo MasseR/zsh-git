@@ -73,7 +73,8 @@ if [ -e $HOME/bin/todo.sh ]; then
 fi
 
 # Start reminder
-if [ -e $(which rem) ]; then
+rempath=$(which rem)
+if [ -e $rempath ]; then
     rem
 fi
 
