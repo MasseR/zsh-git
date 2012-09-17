@@ -138,8 +138,10 @@ prompt_wunjo_setup() {
 prompt_wunjo_precmd() {
     local ex=$?
     psvar=()
-    battery=$(~/bin/zsh-battery)
-    RPROMPT=$battery
+    if [ -e /proc/acpi/battery/BAT0 ]; then
+        battery=$(~/bin/zsh-battery)
+        RPROMPT=$battery
+    fi
 
     if [[ $ex -ge 128 ]]; then
         sig=$signals[$ex-127]
