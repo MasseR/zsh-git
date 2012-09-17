@@ -97,6 +97,7 @@ prompt_wunjo_setup() {
     pc[path]='Cyan'
     pc[shortpath]='default'
     pc[rc]='red'
+    pc[remote]='red'
     pc[scm_branch]='Cyan'
     pc[scm_commitid]='Yellow'
     pc[scm_status_dirty]='Red'
@@ -117,6 +118,11 @@ prompt_wunjo_setup() {
     p_line="$pc[line]%y$pc[reset]"
 
     PROMPT=
+    # Add indication if remote
+    if [ ! -e $SSH_CLIENT ]; then
+        host=$(echo $SSH_CLIENT | cut -f1 -d " ")
+        PROMPT+="$pc[remote]($host)$pc[reset]"
+    fi
     if [ $verbose ]; then
         PROMPT+="$pc[host]%m$pc[reset] "
     fi
