@@ -44,7 +44,6 @@ fi
 autoload -U edit-command-line
 zle -N edit-command-line
 
-prompt wunjo
 bindkey "^?" backward-delete-char
 bindkey '^[OH' beginning-of-line
 bindkey '^[OF' end-of-line
