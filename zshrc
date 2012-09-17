@@ -66,11 +66,15 @@ if [ -f "${HOME}/.gpg-agent-info" ]; then
 fi
 
 # Show tasks
-echo "-------------"
-$HOME/bin/todo.sh ls "+medios\|@school\|+kuriero"
-echo "-------------\n"
+if [ -e $HOME/bin/todo.sh ]; then
+    echo "-------------"
+    $HOME/bin/todo.sh ls "+medios\|@school\|+kuriero"
+    echo "-------------\n"
+fi
 
 # Start reminder
-rem
+if [ -e $(which rem) ]; then
+    rem
+fi
 
 #export SANE_DEFAULT_DEVICE="plustek:libusb:002:007"
