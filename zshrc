@@ -70,13 +70,6 @@ if [ -f "${HOME}/.gpg-agent-info" ]; then
     export GPG_TTY=$(tty)
 fi
 
-# Show tasks
-if [ -e $HOME/bin/todo.sh ]; then
-    echo "-------------"
-    $HOME/bin/todo.sh ls "+medios\|@school\|+kuriero"
-    echo "-------------\n"
-fi
-
 # Start reminder
 rempath=$(which rem)
 if [ -e $rempath ]; then
