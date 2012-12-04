@@ -13,6 +13,7 @@ prompt wunjo # Custom prompt that shows vcs info
 # Set history settings
 setopt INC_APPEND_HISTORY SHARE_HISTORY # Increment history and share
 setopt HIST_EXPIRE_DUPS_FIRST # Expire duplicates first
+setopt EXTENDED_HISTORY
 HISTFILE=$HOME/.zhistory
 HISTSIZE=10200 # Histsize > savehist to give some breating room
 SAVEHIST=10000
@@ -67,7 +68,7 @@ fi
 # Show tasks
 if [ -e $HOME/bin/todo.sh ]; then
     echo "-------------"
-    $HOME/bin/todo.sh ls "+medios\|@school\|+kuriero"
+    $HOME/bin/todo.sh ls "+medios\|@school\|+kuriero\|+admin"
     echo "-------------\n"
 fi
 
