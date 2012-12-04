@@ -28,8 +28,14 @@ export HOSTNAME PAGER EDITOR
 if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases ]
 fi
+if [ -f ~/.zsh_aliases ]; then
+    source ~/.zsh_aliases ]
+fi
 if [ -f ~/.bash_exports ]; then
     source ~/.bash_exports ]
+fi
+if [ -f ~/.zsh_exports ]; then
+    source ~/.zsh_exports ]
 fi
 if [ -f ~/bin/sandbox ]; then
     source ~/bin/sandbox >> /dev/null
@@ -63,13 +69,6 @@ if [ -f "${HOME}/.gpg-agent-info" ]; then
     . "${HOME}/.gpg-agent-info"
     export GPG_AGENT_INFO
     export GPG_TTY=$(tty)
-fi
-
-# Show tasks
-if [ -e $HOME/bin/todo.sh ]; then
-    echo "-------------"
-    $HOME/bin/todo.sh ls "+medios\|@school\|+kuriero\|+admin"
-    echo "-------------\n"
 fi
 
 # Start reminder
